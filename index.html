@@ -87,10 +87,13 @@
   }
 
   .left-panel {
-    padding: 40px 40px;
-    display: flex; flex-direction: column; gap: 40px;
-    height: 100vh; overflow: hidden;
-  }
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  overflow: auto;
+}
 
   .hero-carousel {
     position: relative; border-radius: var(--card-radius);
@@ -311,13 +314,7 @@
     border-radius: 12px; padding: 14px 16px;
     display: flex; gap: 14px; align-items: flex-start;
   }
-  .event-badge {
-    background: rgba(255,255,255,0.25); border-radius: 8px;
-    padding: 5px 10px; font-size: 11px; font-weight: 600; color: #fff;
-    display: flex; align-items: center; gap: 5px;
-    white-space: nowrap; font-family: 'Poppins', sans-serif;
-  }
-  .event-badge-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; }
+
   .event-content { flex: 1; }
   .event-title { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
   .event-desc { font-size: 12px; color: rgba(255,255,255,0.9); margin-top: 4px; line-height: 1.5; }
@@ -332,11 +329,19 @@
   }
   .event-avatar:first-child { margin-left: 0; }
   .event-attending { font-size: 11px; color: rgba(255,255,255,0.9); font-weight: 700; }
+  .event-speaker img {
+  border-radius: 5.87px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   .event-speaker {
-    width: 52px; height: 52px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
-    border: 3px solid rgba(255,255,255,0.4); background: #c0a0d0;
-  }
-  .event-speaker img { width: 100%; height: 100%; object-fit: cover; }
+  width: 90px;
+  height: 110px;
+  border-radius: 5.87px;
+  padding: 6px;
+  background: #F5A623; /* outer layer */
+}
   .rsvp-btn {
     display: flex; align-items: center; gap: 5px;
     background: var(--blue-dark); color: #fff;
@@ -358,7 +363,7 @@
     .main-wrapper { height: auto; overflow: visible; }
     body { height: auto; overflow: auto; }
     .left-panel { height: auto; }
-    .hero-carousel { min-height: 260px; height: 260px; flex: none; }
+    .hero-carousel {width: 100%; max-width: 1333px; aspect-ratio: 1333 / 873; flex: none; }
     .right-panel { height: auto; overflow: visible; border-left: none; border-top: 2px solid rgba(0,0,0,0.06); }
   }
   @media (max-width: 600px) {
@@ -425,26 +430,46 @@
 
       <!-- Hero Carousel — clean images, no text overlay -->
       <div class="hero-carousel">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/2aea4a0a09894381a8dc/thumbnail.jpg');"></div>
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6f58c46458ac40ca9c54/thumbnail3.png');"></div>
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/1246b29ad8c741569f19/thumbnail4.jpg');"></div>
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/79a5aed9fa4445b29837/thumbnail5.jpg');"></div>
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/be40414495854dc1bd73/gptw.jpg');"></div>
-          <div class="carousel-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c000a4653c7347b88093/legacy_of_care.jpg');"></div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8249;</button>
-        <button class="carousel-btn next" onclick="moveCarousel(1)">&#8250;</button>
-        <div class="carousel-dots" id="carouselDots"></div>
-      </div>
+  <div class="carousel-track" id="carouselTrack">
+
+    <a href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2FjcBpKYyLaXU&data=05%7C02%7Cforum.kapadia%40Cipla.com%7C16c1d0f7082645178f5a08dd9788806c%7Ce6fd9f9f6c494254b8e890fba073cceb%7C0%7C0%7C638833334720863855%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=C3umQQ3ouv3Cfsn9YckHjpEa5HS0XL8AaLd0zuVJme8%3D&reserved=0" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/2aea4a0a09894381a8dc/thumbnail.jpg');">
+    </a>
+
+    <a href="https://ciplaltd-my.sharepoint.com/:v:/g/personal/corpcomm_cipla_com/ESS9oEGQw29Mj6hq24SG2NQBNo_yn0b0x90VClTF-ZMLEQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nAZjBW&xsdata=MDV8MDJ8Zm9ydW0ua2FwYWRpYUBDaXBsYS5jb218ODk3YjExZTMxMjk2NDg4MmVjY2IwOGRkNDExODMwYzZ8ZTZmZDlmOWY2YzQ5NDI1NGI4ZTg5MGZiYTA3M2NjZWJ8MHwwfDYzODczODI5NDMzOTk4MjIwMXxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&sdata=RTlMVDlLalBReEJ5azZOZDZMNjM4WWlZbndWSUJKSmpEYjdvTi9DQWxnaz0%3d" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6f58c46458ac40ca9c54/thumbnail3.png');">
+    </a>
+
+    <a href="https://ciplalimit.plateau.com/learning/user/personal/viewPersonalHome.do?OWASP_CSRFTOKEN=H1JX-4BT2-YXS8-DVA1-ITEA-OI7I-QWQU-YHEQ&fromSF=Y&fromDeepLink=true" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/1246b29ad8c741569f19/thumbnail4.jpg');">
+    </a>
+
+    <a href="https://example.com/page4" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/79a5aed9fa4445b29837/thumbnail5.jpg');">
+    </a>
+
+    <a href="https://example.com/page5" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/be40414495854dc1bd73/gptw.jpg');">
+    </a>
+
+    <a href="https://example.com/page6" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c000a4653c7347b88093/legacy_of_care.jpg');">
+    </a>
+
+  </div>
+
+  <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8249;</button>
+  <button class="carousel-btn next" onclick="moveCarousel(1)">&#8250;</button>
+  <div class="carousel-dots" id="carouselDots"></div>
+</div>
 
       <!-- Champions Carousel -->
       <div class="champions-wrapper">
         <div class="champions-carousel">
           <div class="champ-track" id="champTrack">
-            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/0ef092aa3460469aa998/Care_that_connects.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
-            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/ff946f9a2fea482db981/Frame2x.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
-            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/019b726093984e388fe9/Frame3x.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
+            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c32b82baa79a41ef946d/Carethatconnects_new.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
+            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/17ef0e9b89d64799abb1/Coc_new.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
+            <div class="champ-slide" style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/8d8ad688a1944db584a7/Win_new.png'); background-size:cover; background-position:center; cursor:pointer;"></div>
             
           </div>
           <button class="champ-nav-btn prev" onclick="moveChamp(-1)">&#8249;</button>
@@ -529,7 +554,6 @@
   <div class="event-card">
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
       <div class="event-badge">
-        <div class="event-badge-dot"></div>
       </div>
       <div class="event-speaker">
         <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6ad4e2e920b74ae3b4eb/Achin.png">
@@ -546,7 +570,6 @@
   <div class="event-card">
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
       <div class="event-badge">
-        <div class="event-badge-dot"></div>
       </div>
       <div class="event-speaker">
         <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/bf65bbe5c59c41a6b618/Ashish.png">
