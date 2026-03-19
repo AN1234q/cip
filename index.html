@@ -96,35 +96,95 @@
 }
 
   .hero-carousel {
-    position: relative; border-radius: var(--card-radius);
-    overflow: hidden; flex: 1; min-height: 0;
-  }
-  .carousel-track {
-    display: flex; height: 100%;
-    transition: transform 0.55s cubic-bezier(.77,0,.18,1);
-    will-change: transform;
-  }
-  .carousel-slide {
-    min-width: 100%; height: 100%;
-    background-size: cover; background-position: top; background-repeat: no-repeat;
-    flex-shrink: 0;
-  }
-  .carousel-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.28); backdrop-filter: blur(4px);
-    border: none; color: #fff;
-    width: 36px; height: 36px; border-radius: 50%;
-    font-size: 22px; cursor: pointer; z-index: 5;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s; padding: 0; line-height: 1;
-  }
-  .carousel-btn:hover { background: rgba(0,0,0,0.5); }
-  .carousel-btn.prev { left: 12px; }
-  .carousel-btn.next { right: 12px; }
-  .carousel-dots {
-    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 7px; z-index: 5;
-  }
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+
+  /* ✅ BEST FIX (instead of fixed height) */
+  width: 100%;
+  max-width: 1333px;
+  aspect-ratio: 1333 / 873;
+
+  /* ✅ prevent flex issues from Workzone */
+  flex: none !important;
+  display: block;
+
+  margin: 0 auto 24px auto; /* spacing below */
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  height: 100%;
+
+  transition: transform 0.55s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+
+  flex: none !important;
+}
+
+/* Slides */
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: rgba(0,0,0,0.28);
+  backdrop-filter: blur(4px);
+  border: none;
+  color: #fff;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background .2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 7px;
+  z-index: 5;
+}
+
+/* ✅ CRITICAL: Prevent overlap with next section */
+.hero-carousel + * {
+  margin-top: 16px;
+}
   .dot {
     width: 8px; height: 8px; border-radius: 50%;
     background: rgba(255,255,255,0.45); cursor: pointer;
@@ -507,38 +567,55 @@
       </div>
 
       <div class="section-title">Cipla Community Buzz</div>
-      <div class="buzz-grid">
-        <div class="buzz-card">
-          <div class="buzz-header">
-            <span class="buzz-header-title">Marketplace</span>
-            <span class="buzz-header-icon"><img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/53e548ddca8e4ea197e8/Group_119.png" style="width:18px;height:18px;object-fit:contain;" alt="Marketplace"></span>
-          </div>
-          <div class="buzz-img-wrap">
-            <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/ab26452e194e4245ba37/marketplace_new.png" alt="Marketplace">
-            <span class="buzz-timestamp"></span>
-          </div>
-        </div>
-        <div class="buzz-card">
-          <div class="buzz-header">
-            <span class="buzz-header-title">Volunteer</span>
-            <span class="buzz-header-icon"><img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6e524952648f433c8513/Group117.png" style="width:18px;height:18px;object-fit:contain;" alt="Volunteer"></span>
-          </div>
-          <div class="buzz-img-wrap">
-            <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/4dc2c736acb04f41aeeb/volunteer_new.png" alt="Volunteer">
-            <span class="buzz-timestamp"></span>
-          </div>
-        </div>
-        <div class="buzz-card">
-          <div class="buzz-header">
-            <span class="buzz-header-title">Brand Store</span>
-            <span class="buzz-header-icon"><img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c9583d180e2249408367/Group123.png" style="width:18px;height:18px;object-fit:contain;" alt="Brand Store"></span>
-          </div>
-          <div class="buzz-img-wrap">
-            <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/1ed06ff43b55418c82db/brandstore_new.png" alt="Brand Store">
-            
-          </div>
-        </div>
+
+<div class="buzz-grid">
+
+  <!-- Marketplace -->
+  <a href="" class="buzz-card-link">
+    <div class="buzz-card">
+      <div class="buzz-header">
+        <span class="buzz-header-title">Marketplace</span>
+        <span class="buzz-header-icon">
+          <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/53e548ddca8e4ea197e8/Group_119.png" style="width:18px;height:18px;object-fit:contain;" alt="Marketplace">
+        </span>
       </div>
+      <div class="buzz-img-wrap">
+        <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/ab26452e194e4245ba37/marketplace_new.png" alt="Marketplace">
+      </div>
+    </div>
+  </a>
+
+  <!-- Volunteer -->
+  <a href="https://your-volunteer-link.com" class="buzz-card-link">
+    <div class="buzz-card">
+      <div class="buzz-header">
+        <span class="buzz-header-title">Volunteer</span>
+        <span class="buzz-header-icon">
+          <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6e524952648f433c8513/Group117.png" style="width:18px;height:18px;object-fit:contain;" alt="Volunteer">
+        </span>
+      </div>
+      <div class="buzz-img-wrap">
+        <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/4dc2c736acb04f41aeeb/volunteer_new.png" alt="Volunteer">
+      </div>
+    </div>
+  </a>
+
+  <!-- Brand Store -->
+  <a href="https://ciplabrandstore.printstop.co.in/" class="buzz-card-link">
+    <div class="buzz-card">
+      <div class="buzz-header">
+        <span class="buzz-header-title">Brand Store</span>
+        <span class="buzz-header-icon">
+          <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c9583d180e2249408367/Group123.png" style="width:18px;height:18px;object-fit:contain;" alt="Brand Store">
+        </span>
+      </div>
+      <div class="buzz-img-wrap">
+        <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/1ed06ff43b55418c82db/brandstore_new.png" alt="Brand Store">
+      </div>
+    </div>
+  </a>
+
+</div>
 
       <div class="section-title" style="padding-top:28px;">Cipla Unplugged</div>
 
