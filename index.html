@@ -256,6 +256,7 @@
     border-left: 1px solid rgba(0,0,0,0.07);
     display: flex; flex-direction: column;
     height: 100vh; overflow-y: auto;
+    overflow-x: hidden;
   }
 
 
@@ -304,7 +305,8 @@
   }
 
   .townhall-card {
-  width: 646.4px;
+  width: 100%;
+  max-width: 646px;
   height: 126px;
   margin: 10px auto 0;
   display: flex;
@@ -325,7 +327,6 @@
 .townhall-logo {
   width: 80px;
   height: 80px;
-  padding: 8px;
 
   background: #fff;
   border-radius: 12px;
@@ -335,11 +336,15 @@
   justify-content: center;
 
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .townhall-logo img {
   width: 100%;
   height: auto;
+  display: block;
+  object-fit: contain;
+  transform: scale(1.3);
 }
 
 /* Content */
@@ -378,6 +383,32 @@
 .townhall-date {
   font-size: 11.5px;
   color: rgba(255,255,255,0.9);
+}
+
+.download-btn {
+  background: #1e5bb8;
+  color: #fff;
+  border: none;
+
+  padding: 6px 10px;
+  border-radius: 18px;
+
+  font-size: 12.5px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.download-icon {
+  background: #fff;
+  color: #1e5bb8;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 10px;
 }
 
 /* Button */
@@ -556,7 +587,7 @@
     body { height: auto; overflow: auto; }
     .left-panel { height: auto; }
     .hero-carousel {width: 100%; max-width: 1333px; aspect-ratio: 1333 / 873; flex: none; }
-    .right-panel { height: auto; overflow: visible; border-left: none; border-top: 2px solid rgba(0,0,0,0.06); }
+    .right-panel { height: auto; overflow: visible; border-left: none; border-top: 2px solid rgba(0,0,0,0.06); overflow-x: hidden; }
   }
   @media (max-width: 600px) {
     .main-wrapper { margin-left: 0; }
@@ -667,6 +698,14 @@
 
     <a href="" target="_blank" class="carousel-slide"
        style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/c000a4653c7347b88093/legacy_of_care.jpg');">
+    </a>
+
+    <a href="" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/d80c65af91ae4c058bfe/corporatefilm.png');">
+    </a>
+
+    <a href="" target="_blank" class="carousel-slide"
+       style="background-image:url('https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/1b8810e742ed4201b26b/baordingpass.png');">
     </a>
 
   </div>
@@ -780,165 +819,195 @@
 
       <div class="section-title" style="padding-top:28px;">Cipla Unplugged</div>
 
+<!-- ================= TABS ================= -->
 <div class="unplugged-tabs">
   <button class="tab-btn" onclick="showTab('townhall', this)">Townhall</button>
   <button class="tab-btn active" onclick="showTab('leaders', this)">Leaders Speak</button>
   <button class="tab-btn" onclick="showTab('corporate', this)">Corporate Communication</button>
 </div>
 
-<!-- LEADERS SPEAK -->
-<div id="leaders" class="tab-content">
+<!-- ================= LEADERS SPEAK ================= -->
+<div id="leaders" class="tab-content" style="display:block;">
   
-  <div class="event-card">
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
-      <div class="event-badge">
-      </div>
-      <div class="event-speaker">
-        <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/6ad4e2e920b74ae3b4eb/Achin.png">
-      </div>
+
+
+      <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/384cf36596214ea9bbca/Achin.png">
     </div>
-    <div class="event-content">
-      <div class="event-title">Achin Gupta</div>
-      <div class="event-desc">
+
+    <div class="townhall-content">
+      <div class="townhall-title">Achin Gupta</div>
+      <div class="townhall-subtitle">
         People associate a 90th with slowing things down. But for us, 90th is just about getting started.
       </div>
+      <div class="townhall-date">
+      </div>
     </div>
+
   </div>
 
-  <div class="event-card">
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
-      <div class="event-badge">
-      </div>
-      <div class="event-speaker">
-        <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/bf65bbe5c59c41a6b618/Ashish.png">
-      </div>
+
+        <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/17ca51435f5e4af6a877/Ashish.png">
     </div>
-    <div class="event-content">
-      <div class="event-title">Ashish Adukia</div>
-      <div class="event-desc">
+
+    <div class="townhall-content">
+      <div class="townhall-title">Ashish Adukia</div>
+      <div class="townhall-subtitle">
         You know, we only seem to be getting younger every year. Our average age of the employees is coming down constantly.
       </div>
+      <div class="townhall-date">
+      </div>
     </div>
+
   </div>
 
 </div>
 
-<!-- TOWNHALL -->
+<!-- ================= TOWNHALL ================= -->
 <div id="townhall" class="tab-content" style="display:none;">
-<div class="townhall-card">
 
-  <!-- Left Logo -->
-  <div class="townhall-logo">
-    <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/fcb3a16fa8a94cdcb129/townhall3.png">
+  <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/fcb3a16fa8a94cdcb129/townhall3.png">
+    </div>
+
+    <div class="townhall-content">
+      <div class="townhall-title">Townhall - FY26 Q1</div>
+      <div class="townhall-subtitle">
+        Access the Q1 FY26 Townhall recording for leadership updates and key priorities.
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="play-btn">
+        Play Video
+        <span class="play-icon">▶</span>
+      </button>
+    </div>
   </div>
 
-  <!-- Content -->
-  <div class="townhall-content">
-    <div class="townhall-title">Townhall - FY26 Q3</div>
-    <div class="townhall-subtitle">
-      A talk on Global performance by Umang Vohra and Achin Gupta
+  <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/0a15c8f927e44433968c/townhall2.png">
     </div>
-    <div class="townhall-date">
-      Conducted on 27th January 2026
+
+    <div class="townhall-content">
+      <div class="townhall-title">Townhall - FY26 Q2</div>
+      <div class="townhall-subtitle">
+        Access the Q2 FY26 Townhall recording for leadership updates and key priorities.
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="play-btn">
+        Play Video
+        <span class="play-icon">▶</span>
+      </button>
     </div>
   </div>
 
-  <!-- Right Button -->
-  <div class="townhall-action">
-    <button class="play-btn">
-      Play Video
-      <span class="play-icon">▶</span>
-    </button>
+
+    <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/ddfc17249b3e4ee4aad3/Q3.png">
+    </div>
+
+    <div class="townhall-content">
+      <div class="townhall-title">Townhall - FY26 Q3</div>
+      <div class="townhall-subtitle">
+        Access the Q3 FY26 Townhall recording for leadership updates and key priorities.
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="play-btn">
+        Play Video
+        <span class="play-icon">▶</span>
+      </button>
+    </div>
+  </div>
+
+</div> <!-- ✅ IMPORTANT: CLOSED PROPERLY -->
+
+<!-- ================= CORPORATE ================= -->
+<div id="corporate" class="tab-content" style="display:none;">
+
+  <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/65da1ff0bffd44ba81ec/cipla90.png">
+    </div>
+
+    <div class="townhall-content">
+      <div class="townhall-title">PPT Theme: Cipla 90 Years</div>
+      <div class="townhall-subtitle">
+        90 Years Branding Deck Template
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="download-btn">
+        Download
+        <span class="download-icon">⬇</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/48aa677b27e7413482ef/cipla90blue.png">
+    </div>
+
+    <div class="townhall-content">
+      <div class="townhall-title">Cipla Brand Guidelines Book</div>
+      <div class="townhall-subtitle">
+        A detailed book highlighting our tone, language, typeface, logo, icons and more.
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="download-btn">
+        Download
+        <span class="download-icon">⬇</span>
+      </button>
+    </div>
+  </div>
+
+    <div class="townhall-card">
+    <div class="townhall-logo">
+      <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/4c85a4ef50eb47fe9c85/mediarelated.png">
+    </div>
+
+    <div class="townhall-content">
+      <div class="townhall-title">Cipla Media Policy</div>
+      <div class="townhall-subtitle">
+        This policy builds on the Code of Principles policy for external communication.
+      </div>
+      <div class="townhall-date">
+      </div>
+    </div>
+
+    <div class="townhall-action">
+      <button class="download-btn">
+        Download
+        <span class="download-icon">⬇</span>
+      </button>
+    </div>
   </div>
 
 </div>
-
-<div class="townhall-card">
-
-  <!-- Left Logo -->
-  <div class="townhall-logo">
-    <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/0a15c8f927e44433968c/townhall2.png">
-  </div>
-
-  <!-- Content -->
-  <div class="townhall-content">
-    <div class="townhall-title">Townhall - FY26 Q3</div>
-    <div class="townhall-subtitle">
-      A talk on Global performance by Umang Vohra and Achin Gupta
-    </div>
-    <div class="townhall-date">
-      Conducted on 27th January 2026
-    </div>
-  </div>
-
-  <!-- Right Button -->
-  <div class="townhall-action">
-    <button class="play-btn">
-      Play Video
-      <span class="play-icon">▶</span>
-    </button>
-  </div>
-
-</div>
-
-<div class="townhall-card">
-
-  <!-- Left Logo -->
-  <div class="townhall-logo">
-    <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/28682e4fc0304e9fa0c1/townhall1.png">
-  </div>
-
-  <!-- Content -->
-  <div class="townhall-content">
-    <div class="townhall-title">Townhall - FY26 Q3</div>
-    <div class="townhall-subtitle">
-      A talk on Global performance by Umang Vohra and Achin Gupta
-    </div>
-    <div class="townhall-date">
-      Conducted on 27th January 2026
-    </div>
-  </div>
-
-  <!-- Right Button -->
-  <div class="townhall-action">
-    <button class="play-btn">
-      Play Video
-      <span class="play-icon">▶</span>
-    </button>
-  </div>
-
-</div>
-
-<!-- CORPORATE -->
-<div id="corporate" class="tab-content" style="display:block;">
-<div class="townhall-card">
-
-  <!-- Left Logo -->
-  <div class="townhall-logo">
-    <img src="https://dmscdn.successfactors.com/e67bac61f74a3e78a20b20c3bff5abd417dd0605df72755f101e24743407f67c/static_content/fcb3a16fa8a94cdcb129/townhall3.png">
-  </div>
-
-  <!-- Content -->
-  <div class="townhall-content">
-    <div class="townhall-title">Townhall - FY26 Q3</div>
-    <div class="townhall-subtitle">
-      A talk on Global performance by Umang Vohra and Achin Gupta
-    </div>
-    <div class="townhall-date">
-      Conducted on 27th January 2026
-    </div>
-  </div>
-
-  <!-- Action -->
-  <div class="townhall-action">
-    <button class="download-btn">
-      Download
-      <span class="download-icon">⬇</span>
-    </button>
-  </div>
-
-</div>
-
 
 <script>
 
